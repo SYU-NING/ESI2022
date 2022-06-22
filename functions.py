@@ -18,12 +18,12 @@ class HaggisWhiskey:
 
     def __init__(self):
         ## read in as dataframe from excel: 
-        self.distance_dd = pd.read_excel('/Users/shunee/github/ESI2022/data/Distance District-District.xlsx', sheet_name='Sheet1')
-        self.distance_sd = pd.read_excel('/Users/shunee/github/ESI2022/data/Distance Supplier-District.xlsx', sheet_name='Sheet1')
-        self.distance_ss = pd.read_excel('/Users/shunee/github/ESI2022/data/Distance Supplier-Supplier.xlsx', sheet_name='Sheet1')
-        self.postcode = pd.read_excel('/Users/shunee/github/ESI2022/data/Postcode Districts.xlsx', sheet_name='Postcode Districts - Class')
-        self.potential_location = pd.read_excel('/Users/shunee/github/ESI2022/data/Potential Locations.xlsx', sheet_name='Postcode Districts - Class')
-        self.supplier = pd.read_excel('/Users/shunee/github/ESI2022/data/Suppliers.xlsx', sheet_name='SuppliersClass')
+        self.distance_dd = pd.read_excel('/data/Distance District-District.xlsx', sheet_name='Sheet1')
+        self.distance_sd = pd.read_excel('/data/Distance Supplier-District.xlsx', sheet_name='Sheet1')
+        self.distance_ss = pd.read_excel('/data/Distance Supplier-Supplier.xlsx', sheet_name='Sheet1')
+        self.postcode = pd.read_excel('/data/Postcode Districts.xlsx', sheet_name='Postcode Districts - Class')
+        self.potential_location = pd.read_excel('/data/Potential Locations.xlsx', sheet_name='Postcode Districts - Class')
+        self.supplier = pd.read_excel('/data/Suppliers.xlsx', sheet_name='SuppliersClass')
 
         ## define production level and categorical demands:
         self.production = self.supplier['Production volume']
