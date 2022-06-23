@@ -58,7 +58,8 @@ def create_data_model(customer_groups_dict, warehouse, num_vehicles):
     data['demands'] = [0] + [total_demand[j] for j in allocated_customers]
     data['depot'] = 0
     data['num_vehicles'] = num_vehicles
-    data['vehicle_capacities'] = 3500 * num_vehicles 
+    vehicle_capacity = 1
+    data['vehicle_capacities'] = [vehicle_capacity * 1000_000] * num_vehicles 
     return data
 
 
@@ -106,7 +107,7 @@ def demand_callback(from_index):
 
 # 1. get dictionary with {open warehouse: group of allocated customers}
 #customer_groups_dict = retreive_depot_customers()
-customer_groups_dict = {4:[1,2,438]}
+customer_groups_dict = {0:[1,2,3,4,5,6,7,8,9,10]}
 
 # 2. extract distance matrix from data, create ortools data format: 
 for warehouse in customer_groups_dict.keys(): 
@@ -152,4 +153,3 @@ for warehouse in customer_groups_dict.keys():
     # print solution on console.
     if solution:
         print_solution(data, manager, routing, solution)
-
